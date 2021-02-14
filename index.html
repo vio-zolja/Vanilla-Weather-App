@@ -15,28 +15,26 @@
 <body>
 <div class="container">
 
-   <from id="form">
+   <form id="form">
        <input id="input" type="text" placeholder="Search city..." />
        <input id="submit" type="submit" value="🔎" />
        <input id="button" type="button" value="Current" />
-   </from>
+   </form>
 
 
    <header>
         <div class="row">
 
-            <div class="col-6">
-                <h1>
+            <div class="col-5">
+                <span class="city">Augsburg</span>
+                <div class="temperature"> 12 </div> 
+                <div class="units">
+                    <span class="celsius">°C </span> | 
+                    <span class="farenheit">°F</span> 
+                </div>                  
 
-                <span class="city">Augsburg: </span>
-                <span class="temperature">12 </span>
-                <span class="celsius">°C </span> | 
-                <span class="farenheit">°F</span>
-
-                </h1>
-
-                <h5>Weather Station in: <div class="station"></div></h5>
-                <h5>Last updated before: <span class="update"></span></h5>
+                <p>Weather Station in: <span class="station"></span><br>
+                Last updated before: <span class="update"></span></p>
 
             </div>
 
@@ -48,89 +46,97 @@
                         <li class="wind">Wind speed: </li>
                         <li class="humidity">Humidty: </li>
                     </ul>
-
-                </div>
+                
+                    <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny">
+                
+                </div>           
             </div>
 
-            <div class="col-1">
-
-                <div class="image">
-                 <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny">
-                </div>
-
-            </div>
+            <div class="col-2"></div>   
 
         </div>
    </header>
 
    <hr>
-
+   <div class="forecast">
    <div class="row">
-
-       <div class="col-2">
-           <h6>Tomorrow</h6>
-           <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny">
-           <div class="temp">3 / 7</div>
-           <div calss="description">
-            <ul>
-                <li class="feels-like">Feels like: </li>
-                <li class="wind">Wind speed: </li>
-                <li class="humidity">Humidty: </li>
-            </ul>
-           </div>
-       </div>
+   
 
         <div class="col-2">
-            <h6>Tomorrow</h6>
-            <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny">
-            <div class="temp">3 / 7</div>
-            <div calss="description">
-                <ul>
-                    <li class="feels-like">Feels like: </li>
-                    <li class="wind">Wind speed: </li>
-                    <li class="humidity">Humidty: </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="col-2">
-             <h6>Tomorrow</h6>
-            <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny">
-            <div class="temp">3 / 7</div>
-            <div calss="description">
-                <ul>                            <li class="feels-like">Feels like: </li>
-                    <li class="wind">Wind speed: </li>
-                    <li class="humidity">Humidty: </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="col-2">
-            <h6>Tomorrow</h6>
-            <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny">
-            <div class="temp">3 / 7</div>
-            <div calss="description">
-                <ul>
-                    <li class="feels-like">Feels like: </li>
-                    <li class="wind">Wind speed: </li>
-                    <li class="humidity">Humidty: </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="col-3">
-            <h6>Tomorrow</h6>
-            <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny">
-            <div class="temp">3 / 7</div>
-               <div calss="description">
-                   <ul>
+            <div class="day">
+                <h6>Tomorrow</h6>
+                <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny">
+                <div class="temp">3 / 7</div>
+                <div calss="description">
+                    <ul>
                         <li class="feels-like">Feels like: </li>
                         <li class="wind">Wind speed: </li>
-                         <li class="humidity">Humidty: </li>
+                        <li class="humidity">Humidty: </li>
                     </ul>
                 </div>
+            </div>
         </div>
 
+        <div class="col-2">
+            <div class="day">            
+                <h6>Tomorrow</h6>
+                <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny">
+                <div class="temp">3 / 7</div>
+                <div calss="description">
+                    <ul>
+                        <li class="feels-like">Feels like: </li>
+                        <li class="wind">Wind speed: </li>
+                        <li class="humidity">Humidty: </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-2">
+            <div class="day">
+                <h6>Tomorrow</h6>
+                <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny">
+                <div class="temp">3 / 7</div>
+                <div calss="description">
+                    <ul>                            <li class="feels-like">Feels like: </li>
+                        <li class="wind">Wind speed: </li>
+                        <li class="humidity">Humidty: </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+         
+        <div class="col-2">
+            <div class="day">              
+                <h6>Tomorrow</h6>
+                <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny">
+                <div class="temp">3 / 7</div>
+                <div calss="description">
+                    <ul>
+                        <li class="feels-like">Feels like: </li>
+                        <li class="wind">Wind speed: </li>
+                        <li class="humidity">Humidty: </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+       <div class="col-3">
+           <div class="day">             
+                <h6>Tomorrow</h6>
+                <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny">
+                <div class="temp">3 / 7</div>
+                <div calss="description">
+                    <ul>
+                            <li class="feels-like">Feels like: </li>
+                            <li class="wind">Wind speed: </li>
+                            <li class="humidity">Humidty: </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+     </div>
    </div>
 
 

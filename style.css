@@ -1,5 +1,5 @@
 .container{
-background-image: linear-gradient(to right, #fcedd9e1 0%, #fcc3b0d7 100%);    box-shadow: rgba(166, 202, 198, 0.877) 10px 10px 10px;
+    background-image: linear-gradient(to right, #fcedd9e1 0%, #fcc3b0d7 100%);    box-shadow: rgba(166, 202, 198, 0.877) 10px 10px 10px;
     margin: 10px auto;
     border:1px solid gray;
     border-radius: 10px;
@@ -10,24 +10,87 @@ background-image: linear-gradient(to right, #fcedd9e1 0%, #fcc3b0d7 100%);    bo
 }
 
 
-form{color:red}
+#form{
+    margin-top: 2%;
+    margin-bottom: 2%;;
+}
 
 #input{
-    width: 400px;
-    border:1px solid gray;
+    border: 1px solid gray;
     border-radius: 5px;
-    margin: 10px auto;
+    background:rgba(193, 255, 212, 0.801);
+    width: 350px;
 }
 
 #submit{
-    border:1px solid gray;
+    border: 1px solid gray;
     border-radius: 5px;
+    background:rgba(193, 255, 212, 0.801)
 }
 
 #button{
-    width:100px;
-    border: 1px solid gray;
-    border-radius:5px;
-    background-color: rgba(243, 150, 74, 0.397);
-
+    border: 1px solid rgb(5, 2, 2);
+    border-radius: 5px;
+    background:rgb(255, 193, 193);
 }
+
+.city{
+    font-variant: small-caps;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.temperature{
+    font-weight: 400;
+    font-size: 50px;
+    position:relative;
+    margin: -50px 0 0 175px;
+}
+
+.units{
+    position:relative;
+    margin: -60px 0 0 240px;
+}
+
+header p{
+    font-size:15px;
+    margin: 40px 0 0 0;
+}
+
+header ul{
+    list-style: none;
+    margin: 10px 0 0 0;
+    padding: 0 0 0 12px;
+    font-size: 15px;
+    background-color: rgba(222, 148, 135, 0.568);
+    border-radius: 20px;
+    width: fit-content;
+}
+
+header img{
+    position:relative;
+    margin: -90px 0 0 100px;
+}
+
+.day{
+    text-align:center;
+}
+
+h6{
+    text-decoration:underline;
+    font-weight:600;
+    text-align:center;
+}
+
+
+.forecast ul{
+    list-style: none;
+    font-size: 15px;
+    padding: 0 0 0 0 ;
+    margin: 10px auto;
+}
+
+
+
+
+
