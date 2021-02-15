@@ -14,18 +14,20 @@
 </head>
 <body>
 <div class="container">
-
+    <div class="top">
    <form id="form">
        <input id="input" type="text" placeholder="Search city..." />
        <input id="submit" type="submit" value="🔎" />
        <input id="button" type="button" value="Current" />
    </form>
 
+   <p class="time"></p>
+    </div>
 
    <header>
         <div class="row">
 
-            <div class="col-5">
+            <div class="col-10">
                 <span class="city">Augsburg</span>
                 <div class="temperature"> 12 </div> 
                 <div class="units">
@@ -33,12 +35,6 @@
                     <span class="farenheit">°F</span> 
                 </div>                  
 
-                <p>Weather Station in: <span class="station"></span><br>
-                Last updated before: <span class="update"></span></p>
-
-            </div>
-
-            <div class="col-5">
                 <div class="description">
 
                     <ul>
@@ -47,12 +43,16 @@
                         <li class="humidity">Humidty: </li>
                     </ul>
                 
-                    <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny">
+                </div> 
                 
-                </div>           
+                <p>Weather Station in: <span class="station"></span><br>
+                Last updated before: <span class="update"></span></p>
+
             </div>
 
-            <div class="col-2"></div>   
+            <div class="col-2">                      
+                <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny">                   
+            </div>  
 
         </div>
    </header>

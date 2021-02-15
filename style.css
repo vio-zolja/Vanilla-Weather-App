@@ -1,5 +1,6 @@
 .container{
-    background-image: linear-gradient(to right, #fcedd9e1 0%, #fcc3b0d7 100%);    box-shadow: rgba(166, 202, 198, 0.877) 10px 10px 10px;
+    background-image: linear-gradient(to right, #fcedd9e3 0%, #fcc3b0d7 100%);
+    box-shadow: rgba(166, 202, 198, 0.877) 10px 10px 10px;
     margin: 10px auto;
     border:1px solid gray;
     border-radius: 10px;
@@ -15,11 +16,15 @@
     margin-bottom: 2%;;
 }
 
+.time{
+    text-align:right;
+    margin: -7% 0 0 0;
+}
+
 #input{
     border: 1px solid gray;
     border-radius: 5px;
     background:rgba(193, 255, 212, 0.801);
-    width: 350px;
 }
 
 #submit{
@@ -34,10 +39,18 @@
     background:rgb(255, 193, 193);
 }
 
+header{
+    margin-top: 10px;
+}
+
+header img{
+    position: relative;
+    margin: 0 350px 0 0;
+}
+
 .city{
     font-variant: small-caps;
     font-size: 30px;
-    margin-bottom: 20px;
 }
 
 .temperature{
@@ -59,8 +72,8 @@ header p{
 
 header ul{
     list-style: none;
-    margin: 10px 0 0 0;
-    padding: 0 0 0 12px;
+    margin: 20px 0 0 0;
+    padding: 0 20px 0 20px;
     font-size: 15px;
     background-color: rgba(222, 148, 135, 0.568);
     border-radius: 20px;
@@ -69,7 +82,8 @@ header ul{
 
 header img{
     position:relative;
-    margin: -90px 0 0 100px;
+    margin: 50px 350% 0 0;
+    padding: 0 0 0 0;
 }
 
 .day{
