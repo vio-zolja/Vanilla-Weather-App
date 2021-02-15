@@ -13,7 +13,7 @@
 
 #form{
     margin-top: 2%;
-    margin-bottom: 2%;;
+    margin-bottom: 7%;
 }
 
 .time{
@@ -51,6 +51,7 @@ header img{
 .city{
     font-variant: small-caps;
     font-size: 30px;
+    margin-left:15px;
 }
 
 .temperature{
@@ -67,7 +68,7 @@ header img{
 
 header p{
     font-size:15px;
-    margin: 40px 0 0 0;
+    margin: 40px 0 0 15px;
 }
 
 header ul{
