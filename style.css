@@ -1,7 +1,7 @@
 .container{
     background-image: linear-gradient(to right, #fcedd9e3 0%, #fcc3b0d7 100%);
     box-shadow: rgba(166, 202, 198, 0.877) 10px 10px 10px;
-    margin: 10px auto;
+    margin: 11px auto;
     border:1px solid gray;
     border-radius: 10px;
     font-family: 'Noto Sans HK', sans-serif;
@@ -44,8 +44,7 @@ header{
 }
 
 header img{
-    position: relative;
-    margin: 0 350px 0 0;
+    margin: 0 0 20% 0;
 }
 
 .city{
