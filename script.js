@@ -52,6 +52,11 @@ function currentTemp (event){
                     <li>Humidity: ${response.data.main.humidity}%</li>
                 </ul>`
 
+            
+            let units = document.querySelector(".units")
+            units.innerHTML = `<span class="celsius">°C </span> | <span class="farenheit">°F</span> `
+
+
             let formatDate = function updated (timestamp){
                 let date = new Date (timestamp);
                 let hours = date.getHours();
@@ -70,7 +75,7 @@ function currentTemp (event){
             }
 
             let headerP = document.querySelector("header p")
-            headerP.innerHTML = `Weather Station in: ${response.data.name}<br>
+            headerP.innerHTML = `Weather Station in: ${response.data.sys.country}<br>
                 Last updated at: ${formatDate(response.data.dt * 1000)}`
 
             
@@ -85,3 +90,69 @@ function currentTemp (event){
 }
 
 button.addEventListener("click", currentTemp)
+
+
+// search
+
+let form = document.querySelector("form");
+
+function search (event){
+    event.preventDefault();
+
+    let apiKey = "3fefe32c502f2c470839a5386891b04a"
+    let city = input.value
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+
+    function display (response){
+        console.log(response.data)
+
+        let city = document.querySelector(".city")
+        let temperature = document.querySelector(".temperature")
+        let img = document.querySelector("header img")
+        let descriptionHeader = document.querySelector("header .description")
+
+        city.innerHTML = `${input.value}`
+        temperature.innerHTML = `${Math.round(response.data.main.temp)}`
+        descriptionHeader.innerHTML = 
+            `<ul>
+                <li>Feels like: ${Math.round(response.data.main.feels_like)} <span class="unit">°C</span></li>
+                <li>Wind speed: ${Math.round(response.data.wind.speed)} km/h</li>
+                <li>Humidity: ${response.data.main.humidity}%</li>
+            </ul>`
+
+        let units = document.querySelector(".units")
+        units.innerHTML = `<span class="celsius">°C </span> | <span class="farenheit">°F</span> `
+
+        let formatDate = function updated (timestamp){
+        let date = new Date (timestamp);
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+                
+
+        if (hours < 10){
+            return `${day} 0${hour}:${minute}`
+        }
+        if(minutes < 10){
+            return `${day} ${hour}:0${minute}`
+        }
+        else{
+            return `${day} ${hour}:${minute}`
+        }
+        }
+
+        let headerP = document.querySelector("header p")
+        headerP.innerHTML = `Weather Station in: ${response.data.sys.country}<br>
+            Last updated at: ${formatDate(response.data.dt * 1000)}`
+            
+        img.setAttribute(
+            "src",
+            `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+        ) 
+    }
+   
+
+    axios.get(apiUrl).then(display)
+
+}
+
+form.addEventListener("submit", search)
