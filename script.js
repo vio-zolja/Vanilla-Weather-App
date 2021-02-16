@@ -81,8 +81,87 @@ function currentTemp (event){
             
             img.setAttribute(
                 "src",
-                `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-            ) 
+                `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`) 
+
+
+            // Forecast
+            
+
+            function forecastApi (){
+
+                let key = "3fefe32c502f2c470839a5386891b04a"
+                let url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${key}&units=metric`
+
+                function forecast(response){
+                    console.log(response.data)
+
+                    let formatDate = function (timestamp){
+                    let date = new Date (timestamp);
+                    let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+                    let day = days[date.getDay()];
+                    return `${day}`}
+            
+
+                    let day1 = document.querySelector(".day-1")
+                    let day2 = document.querySelector(".day-2")
+                    let day3 = document.querySelector(".day-3")
+                    let day4 = document.querySelector(".day-4")
+                    let day5 = document.querySelector(".day-5")
+
+                    day1.innerHTML =`<h6>${formatDate(response.data.list[1].dt * 1000)}</h6>
+                                    <img src=" https://openweathermap.org/img/wn/${response.data.list[1].weather[0].icon}@2x.png" alt="${response.data.list[1].weather[0].main}" >
+                                   
+                                    <div class="temp">${Math.round(response.data.list[1].main.temp)} °C</div>
+                                    
+                                        <ul>
+                                            <li>Wind speed: ${Math.round(response.data.list[1].wind.speed)} km/h </li>
+                                            <li>Humidty: ${response.data.list[1].main.humidity} %</li>
+                                        </ul>`
+
+                    day2.innerHTML =`<h6>${formatDate(response.data.list[13].dt * 1000)}</h6>
+                                    <img src=" https://openweathermap.org/img/wn/${response.data.list[13].weather[0].icon}@2x.png" alt="${response.data.list[1].weather[0].main}">
+                                    <div class="temp">${Math.round(response.data.list[13].main.temp)} °C  </div>
+                                    
+                                        <ul>
+                                            <li>Wind speed: ${Math.round(response.data.list[13].wind.speed)} km/h </li>
+                                            <li>Humidty: ${response.data.list[13].main.humidity} %</li>
+                                        </ul>`
+
+                    day3.innerHTML =`<h6>${formatDate(response.data.list[21].dt * 1000)}</h6>
+                                    <img src=" https://openweathermap.org/img/wn/${response.data.list[25].weather[0].icon}@2x.png" alt="${response.data.list[1].weather[0].main}">
+                                    <div class="temp">${Math.round(response.data.list[21].main.temp)} °C  </div>
+                                    
+                                        <ul>
+                                            <li>Wind speed: ${Math.round(response.data.list[21].wind.speed)} km/h </li>
+                                            <li>Humidty: ${response.data.list[21].main.humidity} %</li>
+                                        </ul>`
+                                        
+                    day4.innerHTML =`<h6>${formatDate(response.data.list[29].dt * 1000)}</h6>
+                                    <img src=" https://openweathermap.org/img/wn/${response.data.list[1].weather[0].icon}@2x.png" alt="${response.data.list[1].weather[0].main}">
+                                    <div class="temp">${Math.round(response.data.list[29].main.temp)} °C  </div>
+                                    
+                                        <ul>
+                                            <li>Wind speed: ${Math.round(response.data.list[29].wind.speed)} km/h </li>
+                                            <li>Humidty: ${response.data.list[29].main.humidity} %</li>
+                                        </ul>`
+
+                    day5.innerHTML =`<h6>${formatDate(response.data.list[37].dt * 1000)}</h6>
+                                    <img src=" https://openweathermap.org/img/wn/${response.data.list[1].weather[0].icon}@2x.png" alt="${response.data.list[1].weather[0].main}">
+                                    <div class="temp">${Math.round(response.data.list[37].main.temp)} °C  </div>
+                                    
+                                        <ul>
+                                            <li>Wind speed: ${Math.round(response.data.list[37].wind.speed)} km/h </li>
+                                            <li>Humidty: ${response.data.list[37].main.humidity} %</li>
+                                        </ul>`                                                                                
+
+
+            }
+                axios.get(url).then(forecast)
+            }
+
+            forecastApi();
+            
+
         }
 
         axios.get(apiUrl).then(dataLog)
@@ -146,8 +225,89 @@ function search (event){
             
         img.setAttribute(
             "src",
-            `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-        ) 
+            `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+
+
+                        // Forecast
+            
+
+            function forecastApiSearch (){
+
+                let key = "3fefe32c502f2c470839a5386891b04a"
+                let cityName = input.value
+                let url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${key}&units=metric`
+
+                function forecast(response){
+                    console.log(response.data)
+
+                    let formatDate = function (timestamp){
+                    let date = new Date (timestamp);
+                    let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+                    let day = days[date.getDay()];
+                    return `${day}`}
+            
+
+                    let day1 = document.querySelector(".day-1")
+                    let day2 = document.querySelector(".day-2")
+                    let day3 = document.querySelector(".day-3")
+                    let day4 = document.querySelector(".day-4")
+                    let day5 = document.querySelector(".day-5")
+
+                    day1.innerHTML =`<h6>${formatDate(response.data.list[1].dt * 1000)}</h6>
+                                    <img src=" https://openweathermap.org/img/wn/${response.data.list[1].weather[0].icon}@2x.png" alt="${response.data.list[1].weather[0].main}" >
+                                   
+                                    <div class="temp">${Math.round(response.data.list[1].main.temp)} °C</div>
+                                    
+                                        <ul>
+                                            <li>Wind speed: ${Math.round(response.data.list[1].wind.speed)} km/h </li>
+                                            <li>Humidty: ${response.data.list[1].main.humidity} %</li>
+                                        </ul>`
+
+                    day2.innerHTML =`<h6>${formatDate(response.data.list[13].dt * 1000)}</h6>
+                                    <img src=" https://openweathermap.org/img/wn/${response.data.list[13].weather[0].icon}@2x.png" alt="${response.data.list[1].weather[0].main}">
+                                    <div class="temp">${Math.round(response.data.list[13].main.temp)} °C  </div>
+                                    
+                                        <ul>
+                                            <li>Wind speed: ${Math.round(response.data.list[13].wind.speed)} km/h </li>
+                                            <li>Humidty: ${response.data.list[13].main.humidity} %</li>
+                                        </ul>`
+
+                    day3.innerHTML =`<h6>${formatDate(response.data.list[21].dt * 1000)}</h6>
+                                    <img src=" https://openweathermap.org/img/wn/${response.data.list[25].weather[0].icon}@2x.png" alt="${response.data.list[1].weather[0].main}">
+                                    <div class="temp">${Math.round(response.data.list[21].main.temp)} °C  </div>
+                                    
+                                        <ul>
+                                            <li>Wind speed: ${Math.round(response.data.list[21].wind.speed)} km/h </li>
+                                            <li>Humidty: ${response.data.list[21].main.humidity} %</li>
+                                        </ul>`
+                                        
+                    day4.innerHTML =`<h6>${formatDate(response.data.list[29].dt * 1000)}</h6>
+                                    <img src=" https://openweathermap.org/img/wn/${response.data.list[1].weather[0].icon}@2x.png" alt="${response.data.list[1].weather[0].main}">
+                                    <div class="temp">${Math.round(response.data.list[29].main.temp)} °C  </div>
+                                    
+                                        <ul>
+                                            <li>Wind speed: ${Math.round(response.data.list[29].wind.speed)} km/h </li>
+                                            <li>Humidty: ${response.data.list[29].main.humidity} %</li>
+                                        </ul>`
+
+                    day5.innerHTML =`<h6>${formatDate(response.data.list[37].dt * 1000)}</h6>
+                                    <img src=" https://openweathermap.org/img/wn/${response.data.list[1].weather[0].icon}@2x.png" alt="${response.data.list[1].weather[0].main}">
+                                    <div class="temp">${Math.round(response.data.list[37].main.temp)} °C  </div>
+                                    
+                                        <ul>
+                                            <li>Wind speed: ${Math.round(response.data.list[37].wind.speed)} km/h </li>
+                                            <li>Humidty: ${response.data.list[37].main.humidity} %</li>
+                                        </ul>`                                                                                
+
+
+            }
+                axios.get(url).then(forecast)
+            }
+
+            forecastApiSearch();
+
+
+         
     }
    
 
@@ -156,3 +316,7 @@ function search (event){
 }
 
 form.addEventListener("submit", search)
+
+
+// Forecast
+
