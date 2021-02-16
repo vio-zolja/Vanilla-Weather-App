@@ -203,6 +203,10 @@ function search (event){
 
     let apiKey = "3fefe32c502f2c470839a5386891b04a"
     let city = input.value
+
+        city = city.toLowerCase();
+        city = city.trim()
+
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
 
     function display (response){
