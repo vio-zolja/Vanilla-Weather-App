@@ -44,7 +44,7 @@ function currentTemp (event){
             let descriptionHeader = document.querySelector("header .description")
 
             city.innerHTML = `${response.data.name}`
-            temperature.innerHTML = `${Math.round(response.data.main.temp)}`
+            temperature.innerHTML = `${Math.round(response.data.main.temp)} °C`
             descriptionHeader.innerHTML = 
                 `<ul>
                     <li>Feels like: ${Math.round(response.data.main.feels_like)} <span class="unit">°C</span></li>
@@ -54,8 +54,31 @@ function currentTemp (event){
 
             
             let units = document.querySelector(".units")
-            units.innerHTML = `<span class="celsius">°C </span> | <span class="farenheit">°F</span> `
+            units.innerHTML = ` Show in <span class="celsius">°C </span> | <span class="farenheit">°F</span> `
 
+            //Units
+
+            let fButton = document.querySelector(".farenheit");
+
+                function convertToFarenheit(event){
+                event.preventDefault();
+                let farenheitTemperature = Math.round((response.data.main.temp*9/5)+32)
+                
+                temperature.innerHTML = `${farenheitTemperature} °F `
+
+                let cButton = document.querySelector(".celsius");
+
+                    function convertToCelsius(event){
+                    event.preventDefault();
+                    temperature.innerHTML = `${Math.round(response.data.main.temp)} °C `
+                    }
+
+                cButton.addEventListener("click", convertToCelsius)
+                }
+
+                fButton.addEventListener("click", convertToFarenheit)
+
+            // Timestamp
 
             let formatDate = function updated (timestamp){
                 let date = new Date (timestamp);
@@ -191,7 +214,7 @@ function search (event){
         let descriptionHeader = document.querySelector("header .description")
 
         city.innerHTML = `${input.value}`
-        temperature.innerHTML = `${Math.round(response.data.main.temp)}`
+        temperature.innerHTML = `${Math.round(response.data.main.temp)} °C`
         descriptionHeader.innerHTML = 
             `<ul>
                 <li>Feels like: ${Math.round(response.data.main.feels_like)} <span class="unit">°C</span></li>
@@ -200,7 +223,31 @@ function search (event){
             </ul>`
 
         let units = document.querySelector(".units")
-        units.innerHTML = `<span class="celsius">°C </span> | <span class="farenheit">°F</span> `
+        units.innerHTML = `Show in <span class="celsius"> °C </span>  | <span class="farenheit"> °F </span> `
+
+                    //Units
+
+                	let fButton = document.querySelector(".farenheit");
+
+                    function convertToFarenheit(event){
+                    event.preventDefault();
+                    let farenheitTemperature = Math.round((response.data.main.temp*9/5)+32)
+                    
+                    temperature.innerHTML = `${farenheitTemperature} °F `
+
+                    let cButton = document.querySelector(".celsius");
+
+                        function convertToCelsius(event){
+                        event.preventDefault();
+                        temperature.innerHTML = `${Math.round(response.data.main.temp)} °C `
+                        }
+
+                    cButton.addEventListener("click", convertToCelsius)
+                    }
+
+                    fButton.addEventListener("click", convertToFarenheit)
+
+                // Timestamp    
 
         let formatDate = function updated (timestamp){
         let date = new Date (timestamp);

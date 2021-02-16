@@ -1,3 +1,6 @@
+body{text-align:center}
+
+
 .container{
     background-image: linear-gradient(to right, #fcedd9e3 0%, #fcc3b0d7 100%);
     box-shadow: rgba(166, 202, 198, 0.877) 10px 10px 10px;
@@ -13,12 +16,12 @@
 
 #form{
     margin-top: 2%;
-    margin-bottom: 7%;
+    margin-bottom: 10%;
 }
 
 .time{
     text-align:right;
-    margin: -7% 0 0 0;
+    margin: -12% 0 0 0;
 }
 
 #input{
@@ -39,13 +42,17 @@
     background:rgb(255, 193, 193);
 }
 
+#button:hover{
+    cursor:pointer;
+    background:rgba(255, 197, 197, 0.541);
+}
+
 header{
     margin-top: 10px;
 }
 
-header img{
-    margin: 0 0 20% 0;
-}
+
+
 
 .city{
     font-variant: small-caps;
@@ -62,12 +69,40 @@ header img{
 
 .units{
     position:relative;
-    margin: -60px 0 0 225px;
+    margin: 0 0 0 15px;
+}
+
+.celsius{
+  background:rgba(139, 62, 139, 0.349);
+  border-radius: 10px;
+  padding: 5px 5px ;
+  text-decoration: solid
+  ;transition: all 200ms ease-in-out;
+
+}
+.celsius:hover{
+  cursor:pointer;
+  color:white;
+  background: rgba(236, 154, 195, 0.822);
+}
+
+.farenheit{
+  background:rgba(139, 62, 139, 0.349);
+  border-radius: 10px;
+  padding: 5px 5px ;
+  text-decoration: solid
+  ;transition: all 200ms ease-in-out;
+
+}
+.farenheit:hover{
+  cursor:pointer;
+  color:white;
+  background:  rgba(236, 154, 195, 0.822);
 }
 
 header p{
     font-size:15px;
-    margin: 40px 0 0 15px;
+    margin: 35px 0 0 15px;
 }
 
 header ul{
@@ -81,9 +116,8 @@ header ul{
 }
 
 header img{
-    position:relative;
-    margin: 50px 350% 0 0;
-    padding: 0 0 0 0;
+    max-width: 100px;
+    margin: 20px 5px 20% 0;
 }
 
 .day{
@@ -98,10 +132,15 @@ h6{
 
 
 .forecast ul{
+    text-align:center;
     list-style: none;
     font-size: 15px;
     padding: 0 0 0 0 ;
     margin: 10px auto;
+}
+
+.forecast li{
+    text-align:center;
 }
 
 
